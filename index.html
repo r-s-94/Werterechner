@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #number {
+            width: 25px;
+            text-align: right;
+
+        }
+
+        #operator {
+            width: 25px;
+            text-align: right;
+
+        }
+
+        #number2 {
+            width: 25px;
+            text-align: right;
+        
+        }
+
+        #number3 {
+            width: 25px;
+            text-align: right;
+        
+        }
+
+        #operator2 {
+            width: 25px;
+            text-align: right;
+        
+        }
+
+        #number4 {
+            width: 25px;
+            text-align: right;
+        
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Werterechner</h1>
+    <h2>Werterechnerversion 2.0</h2>
+    <h3>Klicke oder tippe auf Details um die Anleitung zulessen. </h3>
+    <h3>
+        <details>
+
+            <h3>Der 1 Teil des Werterechners mit <Button>Button</Button></h3>
+            <ul>
+                <b>Der Werterechner funktioniert wie der 1 Werterechner nur das es möglich ist in ein <input type="text" name="" id="" value="input-Feld" >input-Feld den gewünschten Rechenoperator wie +, -, * oder / einzugeben.</b>
+            </ul>
+            <ul>
+                <b>ACHTUNG!!!!!! Damit der Werterechner wirklich funktioniert muss in das entsprechende input-Feld für den Rechenoperator folgende Zeichen rein = + für Addition, - für Subtraktion, * = Stern für Multiplikation und / = Schrägstrich für Diviesion.</b>
+            </ul>
+            
+            <ul>
+                <b>In das 1 <input type="text" name="" id="" value="input-Feld" >input-Feld gibt man die 1 Zahl ein, indem man in das input-Feld tippt oder klickt.</b>
+            </ul>
+            <ul>    
+                <b>In das 2 <input type="text" name="" id="" value="input-Feld" >input-Feld gibt man den gewünschten Rechenoperator ein.</b>
+            </ul>
+            <ul>    
+                <b>In das 3 <input type="text" name="" id="" value="input-Feld" >input-Feld gibt man dann die 2 Zahl ein.</b>
+            </ul>
+            <ul>    
+                <b>Zum Schluss tippt oder klickt man auf den Button<button>Berechnung auslösen</button>um die Berechnung ausführen zulassen.</b>
+            </ul>
+            
+            <hr>
+            <h3>Der 2 Teil des Werterechners ohne Button</h3>
+            <ul>
+                <b>Bei dem 2 Teil des Werterechners ohne Button ist der Vorgang der gleiche, in das 1 input-Feld kommt die 1 Zahl, in das input-Feld mit Rechenoperator kommt der gewünschte Rechenoperator und in das 3 input-Feld kommt die 2 Zahl.</b>
+            </ul>
+            <ul>
+                <b>Hier gibt es keinen Button, da durch die eingabe in die input-Felder die Berechnung automatisch durchgeführt wird.</b>
+            </ul>
+            
+            
+
+        </details>
+    </h3>
+    <b>Werterechner mit <Button>Button</Button></b>
+    <ul>
+        <label for="">Gebe hier deine 1 Zahl ein: </label><input type="number" id="number"  >
+    </ul>
+    <ul>
+        <label for="">Gebe hier deinen Rechenoperator ein: </label><input type="text" name="" id="operator"  >
+    </ul>
+    <ul>
+        <label for="">Gebe hier deine 2 Zahl ein: </label><input type="number" name="" id="number2"  >
+    </ul>
+    <ul>
+        <button onclick="action()" >Berechnung auslösen</button>
+    </ul>    
+    <p id="out" >Rechenausgabe</p>
+    <hr>
+    <b>Werterechner ohne Button</b>
+    <ul>
+        <label for="">Gebe hier deine 1 Zahl ein: </label><input type="number" name="" id="number3" oninput="action2()" >
+    </ul>
+    <ul>
+        <label for="">Gebe hier deinen Rechenoperator ein: </label><input type="text" name="" id="operator2" oninput="action2()" >
+    </ul>
+    <ul>
+        <label for="">Gebe hier deine 2 Zahlb ein:</label><input type="number" name="" id="number4" oninput="action2()" >
+    </ul>
+    <p id="out2" >2 Ausgabe</p>
+    <hr>
+
+    <script>
+
+        //  Werterechner mit Buuton
+
+        function action() {
+            let number = document.getElementById('number').value;
+            let x = Number(number);
+            let operator = document.getElementById('operator').value;
+            let number2 = document.getElementById('number2').value;
+            let x2 = Number(number2);
+            document.getElementById('out').innerHTML = calculation(x, operator, x2);
+
+        }
+
+        function calculation(x, operator, x2) {
+            return eval(x + operator + x2);
+
+        }
+
+
+        //  Werterechner ohne Button
+
+        function action2() {
+            let number3 = document.getElementById('number3').value;
+            let x3 = Number(number3);
+            let operator2 = document.getElementById('operator2').value;
+            let number4 = document.getElementById('number4').value;
+            let x4 = Number(number4);
+            document.getElementById('out2').innerHTML = calculation2(x4, operator2, x3);
+
+        }
+
+        function calculation2(x3, operator2, x4) {
+            return eval(x3 + operator2 + x4);
+
+        }
+
+
+    </script>
+
+</body>
+</html>
